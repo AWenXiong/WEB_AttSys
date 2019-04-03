@@ -1,0 +1,132 @@
+<div>
+  <h2 class = "infoh" >
+    <div class="info">
+      <label class="info_left">当前用户：{{showInfo.staffId}}</label>
+      <label class="info_middle">职位：{{showInfo.staffPosition}}</label>
+      <label class="info_middle_right">部门：{{showInfo.staffDepartment}}</label>
+      <label class="info_right" (click)="exit()"> 注销</label>
+    </div>
+  </h2>
+</div>
+<body>
+<div class = "total">
+  <ul class = "edge">
+    <li class="first">
+      <a routerLink ="/manager/manager-exam-vacate">审批请假记录</a>
+      <ul class="hid hid1">
+        <li><a routerLink="/manager/manager-exam-vacate/pending">待审批</a></li>
+        <li><a routerLink="/manager/manager-exam-vacate/approved">已审批</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink ="/manager/manager-exam-leave">审批外出记录</a>
+      <ul class="hid hid1">
+        <li><a routerLink="/manager/manager-exam-leave/pending">待审批</a></li>
+        <li><a routerLink="/manager/manager-exam-leave/approved">已审批</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink ="/manager/search-vacate">查看请假记录</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/search-leave">查看外出记录</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/vacate">填写请假申请</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/leave">填写外出申请</a>
+    </li>
+    <li class="last" style="border:none;">
+      <a routerLink ="/manager/search-company">查看公司情况</a>
+    </li>
+    <br/><br/><br/><br/>
+    <h2 class = "pending">待审批</h2>
+    <div class = "pendingdiv">
+      <table class = "pendingTable">
+        <thead>
+        <tr>
+          <th>开始时间</th>
+          <th>返回时间</th>
+          <th>请假类型</th>
+          <th class = "tableoperate"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let pendingrecords of pendingRecords">
+          <td>{{pendingrecords.startTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{pendingrecords.endTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{pendingrecords.leaveKind}}</td>
+          <td>
+            <label class = "wordLink" (click)="onLook(pendingrecords.applyId)">  查看原因  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onEdit(pendingrecords.applyId)">  修改  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onDelete(pendingrecords.applyId)">  删除  </label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class = "refused">未通过</h2>
+    <div class= "refuseddiv">
+      <table class = "refusedTable">
+        <thead>
+        <tr>
+          <th>开始时间</th>
+          <th>返回时间</th>
+          <th>请假类型</th>
+          <th>审批人</th>
+          <th class = "tableoperate"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let refusedrecords of refusedRecords">
+          <td>{{refusedrecords.startTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{refusedrecords.endTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{refusedrecords.leaveKind}}</td>
+          <td>{{refusedrecords.sir}}</td>
+          <td>
+            <label class = "wordLink" (click)="onLook(refusedrecords.applyId)">  查看原因  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onEdit(refusedrecords.applyId)">  修改  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onDelete(refusedrecords.applyId)">  删除  </label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class = "approved">已通过</h2>
+    <div class= "approveddiv">
+      <table class = "approvedTable">
+        <thead>
+        <tr>
+          <th>开始时间</th>
+          <th>返回时间</th>
+          <th>请假类型</th>
+          <th>审批人</th>
+          <th class = "tableoperate"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let approvedrecords of approvedRecords">
+          <td>{{approvedrecords.startTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{approvedrecords.endTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{approvedrecords.leaveKind}}</td>
+          <td>{{approvedrecords.sir}}</td>
+          <td>
+            <label class = "wordLink" (click)="onLook(approvedrecords.applyId)">  查看原因  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onEdit(approvedrecords.applyId)">  修改  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onDelete(approvedrecords.applyId)">  删除  </label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ul>
+</div>
+</body>
+

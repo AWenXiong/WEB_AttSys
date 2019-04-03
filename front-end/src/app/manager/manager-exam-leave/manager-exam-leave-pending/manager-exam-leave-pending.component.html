@@ -1,0 +1,75 @@
+<div>
+  <h2 class = "infoh" >
+    <div class="info">
+      <label class="info_left">当前用户：{{showInfo.staffId}}</label>
+      <label class="info_middle">职位：{{showInfo.staffPosition}}</label>
+      <label class="info_middle_right">部门：{{showInfo.staffDepartment}}</label>
+      <label class="info_right" (click)="exit()"> 注销</label>
+    </div>
+  </h2>
+</div>
+<body>
+<div class = "total">
+  <ul class = "edge">
+    <li class="first">
+      <a routerLink ="/manager/manager-exam-vacate">审批请假记录</a>
+      <ul class="hid hid1">
+        <li><a routerLink="/manager/manager-exam-vacate/pending">待审批</a></li>
+        <li><a routerLink="/manager/manager-exam-vacate/approved">已审批</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink ="/manager/manager-exam-leave">审批外出记录</a>
+      <ul class="hid hid1">
+        <li><a routerLink="/manager/manager-exam-leave/pending">待审批</a></li>
+        <li><a routerLink="/manager/manager-exam-leave/approved">已审批</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink ="/manager/search-vacate">查看请假记录</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/search-leave">查看外出记录</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/vacate">填写请假申请</a>
+    </li>
+    <li>
+      <a routerLink ="/manager/leave">填写外出申请</a>
+    </li>
+    <li class="last" style="border:none;">
+      <a routerLink ="/manager/search-company">查看公司情况</a>
+    </li>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <div class = "pendingdiv">
+      <table class = "pendingTable">
+        <thead>
+        <tr>
+          <th>员工姓名</th>
+          <th>员工部门</th>
+          <th>开始时间</th>
+          <th>返回时间</th>
+          <th class = "tableoperate"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let lookrecords of lookRecords">
+          <td>{{lookrecords.staffName}}</td>
+          <td>{{lookrecords.staffDepartment}}</td>
+          <td>{{lookrecords.vacateStartTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{lookrecords.vacateEndTime | date:'yyyy-MM-dd'}}</td>
+          <td>
+            <label class = "wordLink" (click)="onLook(lookrecords.applyId)">  查看原因  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onApprove(lookrecords.applyId)">  通过  </label>
+            &nbsp;
+            <label class = "wordLink" (click)="onRefuse(lookrecords.applyId)">  拒绝  </label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ul>
+</div>
+</body>
+

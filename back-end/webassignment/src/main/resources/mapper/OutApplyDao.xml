@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrqiu.webassignment.dao.OutApplyDao">
+    <resultMap id="BaseResultMap" type="com.mrqiu.webassignment.entity.OutApply">
+        <id column="oid" jdbcType="VARCHAR" property="oid"/>
+        <result column="ostaff_id" jdbcType="VARCHAR" property="ostaffId"/>
+        <result column="ostart_time" jdbcType="TIMESTAMP" property="ostartTime"/>
+        <result column="oend_time" jdbcType="TIMESTAMP" property="oendTime"/>
+        <result column="opriority" jdbcType="INTEGER" property="opriority"/>
+        <result column="oreason" jdbcType="VARCHAR" property="oreason"/>
+        <result column="opass_staff_id" jdbcType="VARCHAR" property="opassStaffId"/>
+        <result column="ostatus" jdbcType="INTEGER" property="ostatus"/>
+    </resultMap>
+
+    <select id="queryAllOutApply" resultType="com.mrqiu.webassignment.entity.OutApply">
+        select * from out_apply
+    </select>
+
+    <select id="queryOutApplyByStaffId" resultType="com.mrqiu.webassignment.entity.OutApply">
+        select * from out_apply
+        where ostaff_id = #{staffId}
+    </select>
+
+    <select id="queryOutApplyById" resultType="com.mrqiu.webassignment.entity.OutApply">
+        select * from out_apply
+        where oid = #{outApplyId}
+    </select>
+
+    <insert id="insertOutApply">
+        insert into out_apply(ostaff_id, ostart_time, oend_time, oreason, ostatus)
+        value(#{staffId}, #{startTime}, #{endTime}, #{reason}, 0)
+    </insert>
+
+    <delete id="deleteOutApply">
+        delete from out_apply
+        where oid = #{applyId}
+    </delete>
+
+    <update id="updateStatus">
+        update out_apply
+        set opass_staff_id = #{passStaffId}, ostatus = #{status}
+        where oid = #{oid}
+    </update>
+</mapper>

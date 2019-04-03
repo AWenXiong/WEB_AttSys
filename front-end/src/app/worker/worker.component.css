@@ -1,0 +1,47 @@
+.infoh{
+  position: absolute;
+  margin: 0px 100px;
+  width: 1050px;
+  height: 25px;
+  border-top:1px solid #000;/*添加边框*/
+  border-bottom:1px solid #000;/*添加边框*/
+  border-left:1px solid #000;/*添加边框*/
+  border-right:1px solid #000;/*添加边框*/
+  padding: 0px;/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+}
+.info{
+  position: absolute;
+  width: 1050px;
+  height: 25px;
+}
+.info_left{
+  position: absolute;
+  right: 650px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_middle{
+  position: absolute;
+  right: 300px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_middle_right{
+  position: absolute;
+  right: 050px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_right{
+  position: absolute;
+  right: 50px;
+  text-align: right;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+}
+.info_right:hover{
+  color: red;
+}

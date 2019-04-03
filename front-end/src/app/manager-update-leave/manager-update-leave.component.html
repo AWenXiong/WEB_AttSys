@@ -1,0 +1,29 @@
+<body>
+<div class = "total">
+  <ul class = "edge">
+    <br/><br/><br/>
+    <div class = "writeApply">
+      <label>开始时间
+        <input [(ngModel)]="myApply.startTime" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>返回时间
+        <input [(ngModel)]="myApply.endTime" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>请假原因
+        <textarea class = "reason" [(ngModel)]="myApply.reason"></textarea>
+      </label>
+    </div>
+    <br/><br/><br/><br/>
+    <div class = "writeApply" (click)="update()">
+      <div class="button blue"><div class="shine"></div>修改</div>
+    </div>
+  </ul>
+</div>
+</body>
+

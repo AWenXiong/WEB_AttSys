@@ -1,0 +1,277 @@
+body{
+  /*background:url("background3.jpg");*/
+  background-color: #fff;
+  background-size:100% 100%;
+  background-attachment: fixed;
+}
+
+* {
+  font-smoothing: antialiased;
+}
+
+.resultDiv{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 400px;
+  overflow : scroll;
+  overflow-x: hidden;
+
+}
+.resultTable{
+  position: absolute;
+  margin: 5px 150px;
+}
+label{
+  font-family: 楷体;
+  font-size: 20px;
+}
+@-webkit-keyframes aa{ /*写一个动画函数*/
+  from{-webkit-transform:rotateY(0deg);}
+  to{-webkit-transform:rotateY(360deg);}
+}
+@-moz-keyframes aa{  /*写一个动画函数*/
+  from{-moz-transform:rotateY(0deg);}
+  to{-moz-transform:rotateY(360deg);}
+}
+
+.total{
+  height:700px;
+}
+select:focus{
+  box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -webkit-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -moz-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+}
+input{
+  font-family: 楷体;
+  font-size: 15px;
+}
+input:focus{
+  box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -webkit-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -moz-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+
+}
+textarea{
+  vertical-align: top;
+  font-family: 楷体;
+  font-size: 15px;
+}
+textarea:focus{
+  box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -webkit-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+  -moz-box-shadow:0 0 5px rgba(81, 203, 238, 1);
+}
+.edge{
+  position: absolute;
+  /*设置导航栏的框框*/
+  margin: 50px 100px;
+  width: 1050px;/*框框的宽度*/
+  height: 700px;/*框框的长度*/
+  padding: 0px;/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+  border:1px solid #000;/*添加边框*/
+  background-color: #fff;
+}
+ul {
+  list-style: none;
+  float: left;
+}
+li{
+  list-style-type: none;/* 去掉li前的点 */
+  float: left;/*将li设置成做浮动，变为联动*/
+}
+a{
+  display: block;/*将a变成块状*/
+  width: 210px;/*设置块的宽度*/
+  height: 50px;/*设置块的长度*/
+  font-family: Microsoft Yahei;
+  line-height: 50px;/*设置字体在块中的高度*/
+  background: #0d69ff linear-gradient(to right, rgba(0,255,0,0), rgba(15, 211, 255, 0.5));
+  margin: 0px 0px;/*块里的高宽通过margin设置*/
+  color: #fff;
+  text-align: center;/*字体居中*/
+  text-decoration: none;/*去掉下划线*/
+  font-size: 15px;
+}
+a:hover{
+  background: #ffd953 linear-gradient(to right, rgba(0,255,0,0), rgba(232, 32, 255, 0.5));
+}
+.annualVacate{
+  position: absolute;
+  /*设置导航栏的框框*/
+  margin: 70px 0px;
+  width: 100%;/*框框的宽度*/
+  height: 30px;/*框框的长度*/
+  padding: 0px;/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+  text-align: center;/*字体居中*/
+  text-decoration: none;/*去掉下划线*/
+  font-size: 20px;
+  font-family: 楷体;
+}
+.writeApply{
+  width: 100%;/*框框的宽度*/
+  height: 30px;/*框框的长度*/
+  padding: 0px;/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+  text-align: center;/*字体居中*/
+  text-decoration: none;/*去掉下划线*/
+  font-size: 15px;
+}
+
+.reason{
+  width: 160px;
+  height: 100px;
+}
+.button {
+  min-height: 1.5em;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 0px 5px 5px 0px;
+  cursor: pointer;
+  opacity: 0.9;
+
+  color: #FFF;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+
+  background: #434343;
+  border: 1px solid #242424;
+
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -webkit-transition: all 0.1s linear;
+  -khtml-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.button:hover {
+  -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+.button:active {
+  -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+.shine {
+  display: block;
+  position: relative;
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+  background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+  padding: 0px 12px;
+  top: -12px;
+  left: -24px;
+  height: 1px;
+  -webkit-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  -khtml-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  -moz-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  -o-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -khtml-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.button:hover .shine {left: 24px;}
+.button:active .shine {opacity: 0;}
+
+.button.gray {background: #525550;}
+.button.blue {background: #3a617e;}
+.button.green {background: #477343;}
+.button.red {background: #723131;}
+.button.purple {background: #4b3f5e;}
+.button.orange {background: #624529;}
+
+table {
+  border-collapse: collapse;
+  font-family: 楷体;
+}
+th,td {
+  padding: .65em;
+  width: 150px;
+}
+
+th,td {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-family: 楷体;
+  font-size: 15px;
+}
+
+tbody tr:hover {
+  background: linear-gradient(#fff,#aaa);
+  font-size: 17px;
+}
+
+.tableoperate{
+  width: 250px;
+}
+.infoh{
+  position: absolute;
+  margin: 0px 130px;
+  width: 1050px;
+  height: 25px;
+  border-top:1px solid #000;/*添加边框*/
+  border-bottom:1px solid #000;/*添加边框*/
+  border-left:1px solid #000;/*添加边框*/
+  border-right:1px solid #000;/*添加边框*/
+  padding: 0px;/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+}
+.info{
+  position: absolute;
+  width: 1050px;
+  height: 25px;
+}
+.info_left{
+  position: absolute;
+  right: 650px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_middle{
+  position: absolute;
+  right: 300px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_middle_right{
+  position: absolute;
+  right: 050px;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+  width:400px;
+}
+.info_right{
+  position: absolute;
+  right: 50px;
+  text-align: right;
+  font-family: Microsoft Yahei;
+  font-size: 20px;
+}
+.info_right:hover{
+  color: red;
+}

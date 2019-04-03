@@ -1,0 +1,31 @@
+<body>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<div class = "total">
+  <ul class = "edge">
+    <div class = "light">
+      <h4>Welcome!</h4>
+    </div>
+    <form>
+    <div class = "id">
+        <input [(ngModel)]="myUser.saccount" [ngModelOptions]="{standalone: true}" name = "saccount" type="text" placeholder="用户名">
+    </div>
+    <div class = "psw">
+        <input [(ngModel)]="myUser.spassword" [ngModelOptions]="{standalone: true}" name = "spassword" type="password" placeholder="密码">
+    </div>
+  <div class="wrapper">
+    <div class="listc">
+      <ul (click)="login()">
+        <li class="linkedin">
+          <a>
+            <i class="fa fa-linkedin fa-2x" >
+            </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div></form>
+    <br/><br/><br/><br/><br/><br/><br/>
+  </ul>
+</div>
+</body>
+

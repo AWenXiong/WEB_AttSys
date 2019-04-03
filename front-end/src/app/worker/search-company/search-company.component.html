@@ -1,0 +1,70 @@
+<div>
+  <h2 class = "infoh" >
+    <div class="info">
+      <label class="info_left">当前用户：{{showInfo.staffId}}</label>
+      <label class="info_middle">职位：{{showInfo.staffPosition}}</label>
+      <label class="info_middle_right">部门：{{showInfo.staffDepartment}}</label>
+      <label class="info_right" (click)="exit()"> 注销</label>
+    </div>
+  </h2>
+</div>
+<body>
+<div class = "total">
+  <ul class = "edge">
+    <li class="first">
+      <a routerLink ="/worker/search-vacate">查看请假记录</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/search-leave">查看外出记录</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/vacate">填写请假申请</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/leave">填写外出申请</a>
+    </li>
+    <li class="last" style="border:none;">
+      <a routerLink ="/worker/search-company">查看公司情况</a>
+    </li>
+    <br/><br/><br/><br/><br/>
+    <div class = "writeApply">
+      <label>员工姓名
+        <input [(ngModel)]="condition.staffName" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>时间范围
+        <input [(ngModel)]="condition.startTime" type="text" placeholder="">&nbsp;&nbsp;-&nbsp;&nbsp;
+        <input [(ngModel)]="condition.endTime" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply" (click)="onClick()">
+      <div class="button purple"><div class="shine"></div>查看</div>
+    </div>
+
+    <div class= "resultDiv">
+      <table class = "resultTable">
+        <thead>
+        <tr>
+          <th>员工姓名</th>
+          <th>员工部门</th>
+          <th>开始时间</th>
+          <th>返回时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let myresults of myResults">
+          <td>{{myresults.staffName}}</td>
+          <td>{{myresults.staffDepartment}}</td>
+          <td>{{myresults.startTime | date:'yyyy-MM-dd'}}</td>
+          <td>{{myresults.endTime | date:'yyyy-MM-dd'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ul>
+</div>
+</body>
+

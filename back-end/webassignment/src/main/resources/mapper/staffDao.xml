@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrqiu.webassignment.dao.StaffDao">
+
+    <select id="checkStaff" resultType="String">
+        select sid
+        from staff
+        where saccount = #{userName} and spassword = #{password}
+    </select>
+
+    <select id="getStaffNameById" resultType="String" parameterType="String">
+        select sname
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffGenderById" resultType="String" parameterType="String">
+        select sgender
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffDepartmentById" resultType="String" parameterType="String">
+        select sdid
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffPosition" resultType="String" parameterType="String">
+        select sposition
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffContact" resultType="String" parameterType="String">
+        select scontact
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffAddress" parameterType="String" resultType="String">
+        select saddress
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getSalaryHolidayById" resultType="int" parameterType="String">
+        select ssalary_holiday
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getEntryTime" parameterType="String" resultType="java.sql.Timestamp">
+        select sentry_time
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getStaffById" resultType="com.mrqiu.webassignment.entity.Staff">
+        select *
+        from staff
+        where sid = #{staffId}
+    </select>
+
+    <select id="getAllStaff" resultType="com.mrqiu.webassignment.entity.Staff">
+        select *
+        from staff
+    </select>
+
+    <insert id="insertStaff">
+        insert into staff
+        values (#{sid},#{saccount},#{spassword},#{sname},#{sgender},#{sdid},#{sposition},#{scontact},#{saddress},#{ssalaryHoliday},#{sentryTime})
+    </insert>
+
+    <delete id="deleteStaff" parameterType="String">
+        delete from staff
+        where sid = #{staffId}
+    </delete>
+
+    <update id="updateStaff">
+        update staff
+        set saccount = #{saccount},spassword = #{spassword},sname = #{sname},
+        sgender = #{sgender}, sdid = #{sdid}, sposition = #{sposition},
+        scontact = #{scontact}, saddress = #{saddress}, sentry_time = #{sentryTime}, ssalary_holiday = #{ssalaryHoliday}
+        where sid = #{sid}
+    </update>
+
+    <update id="updateStaffHoliday">
+        update staff
+        set ssalary_holiday = #{salaryHoliday}
+        where sid = #{staffId}
+    </update>
+
+</mapper>

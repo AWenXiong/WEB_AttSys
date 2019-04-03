@@ -1,0 +1,73 @@
+<div>
+  <h2 class = "infoh" >
+    <div class="info">
+      <label class="info_left">当前用户：{{showInfo.staffId}}</label>
+      <label class="info_middle">职位：{{showInfo.staffPosition}}</label>
+      <label class="info_middle_right">部门：{{showInfo.staffDepartment}}</label>
+      <label class="info_right" (click)="exit()"> 注销</label>
+    </div>
+  </h2>
+</div>
+<body>
+<div class = "total">
+  <ul class = "edge">
+    <li class="first">
+      <a routerLink ="/worker/search-vacate">查看请假记录</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/search-leave">查看外出记录</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/vacate">填写请假申请</a>
+    </li>
+    <li>
+      <a routerLink ="/worker/leave">填写外出申请</a>
+    </li>
+    <li class="last" style="border:none;">
+      <a routerLink ="/worker/search-company">查看公司情况</a>
+    </li>
+    <div class = "annualVacate">剩余可休年假天数：
+      <label class = "annualVacateDays">{{days}}</label>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <div class = "writeApply">
+      <label>请假类型
+        <select [(ngModel)]="this.myApply.leaveKind" >
+          <option [ngValue] ="-1"></option>
+          <option [ngValue] ="0">事假</option>
+          <option [ngValue] ="1">工伤假</option>
+          <option [ngValue] ="2">病假</option>
+          <option [ngValue]="3">婚假</option>
+          <option [ngValue]="4">产假</option>
+          <option [ngValue]="5">年假</option>
+          <option [ngValue]="6">探亲假</option>
+          <option [ngValue]="7">丧假</option>
+        </select>
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>开始时间
+        <input [(ngModel)]="myApply.startTime" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>返回时间
+        <input [(ngModel)]="myApply.endTime" type="text" placeholder="">
+      </label>
+    </div>
+    <br/>
+    <div class = "writeApply">
+      <label>请假原因
+        <textarea class = "reason" [(ngModel)]="myApply.reason"></textarea>
+      </label>
+    </div>
+    <br/><br/><br/><br/>
+    <div class = "writeApply" (click)="wrtieApply()">
+      <div class="button blue"><div class="shine"></div>提交</div>
+    </div>
+  </ul>
+</div>
+</body>
+
